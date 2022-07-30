@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ConcentrationApp: App {
+    let game = EmojiConcentrationGame()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: game)
         }
     }
 }
