@@ -10,9 +10,9 @@ import SwiftUI
 // ViewModel (which instantiates the model)
 class EmojiConcentrationGame: ObservableObject {
     
-    static let emojis = ["🚁", "🚀", "✈️", "⛴", "🛩", "🚗", "🚌", "🚐", "🚛", "🚑", "🚕", "🚚", "🚢", "🚒", "🚓", "🚎", "🚖", "🛵", "🛴", "🛺", "🛻", "🚜"]
+    private static let emojis = ["🚁", "🚀", "✈️", "⛴", "🛩", "🚗", "🚌", "🚐", "🚛", "🚑", "🚕", "🚚", "🚢", "🚒", "🚓", "🚎", "🚖", "🛵", "🛴", "🛺", "🛻", "🚜"]
 
-    static func createConcentrationGame() -> ConcentrationGame<String> {
+    private static func createConcentrationGame() -> ConcentrationGame<String> {
         ConcentrationGame<String>(numberOfPairsOfCards: 4) { pairIndex in
             emojis[pairIndex]
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ConcentrationApp: App {
-    let game = EmojiConcentrationGame()
+    private let game = EmojiConcentrationGame()
     
     var body: some Scene {
         WindowGroup {
