@@ -12,27 +12,12 @@ struct ConcentrationGame<CardContent> {
     private(set) var cards: Array<Card>
     
     mutating func choose(_ card: Card) {
-//        if let chosenIndex = index(of: card) {
-//        This line of code is reduced to the line of code below it and it eliminates the need for the block of code below!
-//        if let chosenIndex = cards.firstIndex(where: { aCardInTheCardsArray in aCardInTheCardsArray.id == card.id}) {
-            if let chosenIndex = cards.firstIndex(where: { $0.id == card.id}) {
-
+        if let chosenIndex = cards.firstIndex(where: { $0.id == card.id}) {
             cards[chosenIndex].isFaceUp.toggle()
         }
         
         print("chosenCard = \(cards)")
     }
-    
-//    No longer needed!
-    
-//    func index(of card: Card) -> Int? {
-//        for index in 0..<cards.count {
-//            if cards[index].id == card.id {
-//                return index
-//            }
-//        }
-//        return nil
-//    }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
         cards = Array<Card>()
