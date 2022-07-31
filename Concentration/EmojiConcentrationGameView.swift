@@ -10,16 +10,16 @@ import SwiftUI
 // View
 struct EmojiConcentrationGameView: View {
 
-    @ObservedObject var viewModel: EmojiConcentrationGame // the instance of this particular game
+    @ObservedObject var game: EmojiConcentrationGame // the instance of this particular game
     
     var body: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))] ){
-                ForEach(viewModel.cards) { card in
+                ForEach(game.cards) { card in
                     CardView(card: card)
                         .aspectRatio(2/3, contentMode: .fit)
                         .onTapGesture {
-                            viewModel.choose(card)
+                            game.choose(card)
                         }
                 }
             }
@@ -57,10 +57,10 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiConcentrationGame()
-        EmojiConcentrationGameView(viewModel: game)
+        EmojiConcentrationGameView(game: game)
             .preferredColorScheme(.dark)
             .previewDevice("iPod touch (7th generation)")
-        EmojiConcentrationGameView(viewModel: game)
+        EmojiConcentrationGameView(game: game)
             .preferredColorScheme(.light)
             .previewDevice("iPod touch (7th generation)")
     }
