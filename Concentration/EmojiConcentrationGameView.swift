@@ -30,7 +30,7 @@ struct EmojiConcentrationGameView: View {
 }
             
 struct CardView: View {
-    let card: ConcentrationGame<String>.Card
+    let card: EmojiConcentrationGame.Card
         
     var body: some View {
         ZStack {

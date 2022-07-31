@@ -9,6 +9,7 @@ import SwiftUI
 
 // ViewModel (which instantiates the model)
 class EmojiConcentrationGame: ObservableObject {
+    typealias Card = ConcentrationGame<String>.Card
     
     private static let emojis = ["🚁", "🚀", "✈️", "⛴", "🛩", "🚗", "🚌", "🚐", "🚛", "🚑", "🚕", "🚚", "🚢", "🚒", "🚓", "🚎", "🚖", "🛵", "🛴", "🛺", "🛻", "🚜"]
 
@@ -18,15 +19,15 @@ class EmojiConcentrationGame: ObservableObject {
         }
     }
        
-    @Published private var model: ConcentrationGame<String> = createConcentrationGame()
+    @Published private var model = createConcentrationGame()
 
-    var cards: Array<ConcentrationGame<String>.Card> {
+    var cards: Array<Card> {
         model.cards
     }
     
     // MARK: - Intent(s)
     
-    func choose(_ card: ConcentrationGame<String>.Card) {
+    func choose(_ card: Card) {
         model.choose(card)
     }
 }

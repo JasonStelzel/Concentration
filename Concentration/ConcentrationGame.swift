@@ -39,7 +39,7 @@ struct ConcentrationGame<CardContent> where CardContent: Equatable {
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
-        cards = Array<Card>()
+        cards = []
         // add numberOfPairsOfCards x 2 cards to cards array
         // the id satisfies the Identifiable requirement by using the Int counting of the pairIndex in the for loop
         for pairIndex in 0..<numberOfPairsOfCards {
@@ -50,8 +50,8 @@ struct ConcentrationGame<CardContent> where CardContent: Equatable {
     }
     
     struct Card: Identifiable {
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
+        var isFaceUp = false
+        var isMatched = false
         let content: CardContent
         let id: Int
     }
