@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EmojiConcentrationGameView.swift
 //  Concentration
 //
 //  Created by Jason Stelzel on 7/26/22.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 // View
-struct ContentView: View {
+struct EmojiConcentrationGameView: View {
 
     @ObservedObject var viewModel: EmojiConcentrationGame // the instance of this particular game
     
@@ -57,10 +57,10 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiConcentrationGame()
-        ContentView(viewModel: game)
+        EmojiConcentrationGameView(viewModel: game)
             .preferredColorScheme(.dark)
             .previewDevice("iPod touch (7th generation)")
-        ContentView(viewModel: game)
+        EmojiConcentrationGameView(viewModel: game)
             .preferredColorScheme(.light)
             .previewDevice("iPod touch (7th generation)")
     }

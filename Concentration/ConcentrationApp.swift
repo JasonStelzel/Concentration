@@ -13,7 +13,7 @@ struct ConcentrationApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: game)
+            EmojiConcentrationGameView(viewModel: game)
         }
     }
 }
