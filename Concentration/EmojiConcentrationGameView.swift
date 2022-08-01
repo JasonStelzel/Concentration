@@ -14,20 +14,27 @@ struct EmojiConcentrationGameView: View {
     
     var body: some View {
         AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in
-            if card.isMatched && !card.isFaceUp {
-                Rectangle().opacity(0)
-            } else {
-                CardView(card: card)
-                    .padding(4)
-                    .onTapGesture {
-                        game.choose(card)
-                    }
-            }
+            cardView(for: card)
         })
         .foregroundColor(.red)
         .padding(.horizontal)
     }
+    
+    @ViewBuilder
+    private func cardView(for card: EmojiConcentrationGame.Card) -> some View {
+        if card.isMatched && !card.isFaceUp {
+            Rectangle().opacity(0)
+        } else {
+            CardView(card: card)
+                .padding(4)
+                .onTapGesture {
+                    game.choose(card)
+                }
+        }
+    }
 }
+
+
             
 struct CardView: View {
     let card: EmojiConcentrationGame.Card
