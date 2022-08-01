@@ -13,6 +13,19 @@ struct ConcentrationGame<CardContent> where CardContent: Equatable {
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly }
+//        get {
+//            let faceUpCardIndices = cards.indices.filter(<#T##isIncluded: (Int) throws -> Bool##(Int) throws -> Bool#>)
+            
+//            let faceUpCardIndices = cards.indices.filter({ index in cards[index].isFaceUp })
+//            return faceUpCardIndices.oneAndOnly // reduces to the single line below
+            
+//            cards.indices.filter({ index in cards[index].isFaceUp }).oneAndOnly // which can be further reduced with the default $0 argument
+            
+              cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly // it's a good idea to avoid trailing closure syntax and keep parens here because another function is called on result of first closure
+        }
+        
+//      set { for index in cards.indices { cards[index].isFaceUp = (index == newValue) } } // further reduced with .forEach, default $0 argument and trailing closure syntax
+        
         set { cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) } }
     }
     
