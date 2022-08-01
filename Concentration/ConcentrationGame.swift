@@ -13,27 +13,19 @@ struct ConcentrationGame<CardContent> where CardContent: Equatable {
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get {
-            var faceUpCardIndices = [Int]()
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    faceUpCardIndices.append(index)
-                }
-            }
-            if faceUpCardIndices.count == 1 {
-                return faceUpCardIndices.first
-            } else {
-                return nil
-            }
+//            let faceUpCardIndices = cards.indices.filter(<#T##isIncluded: (Int) throws -> Bool##(Int) throws -> Bool#>)
+            
+//            let faceUpCardIndices = cards.indices.filter({ index in cards[index].isFaceUp })
+//            return faceUpCardIndices.oneAndOnly // these two lines reduce to the single line below
+            
+//            cards.indices.filter({ index in cards[index].isFaceUp }).oneAndOnly // which can be further reduced with the default $0 argument
+            
+              cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly // it's a good idea to avoid trailing closure syntax and keep parens here because another function is called on result of first closure
         }
-        set {
-            for index in cards.indices {
-                if index != newValue {
-                    cards[index].isFaceUp = false
-                } else {
-                    cards[index].isFaceUp = true
-                }
-            }
-        }
+        
+//      set { for index in cards.indices { cards[index].isFaceUp = (index == newValue) } } // further reduced with .forEach, default $0 argument and trailing closure syntax
+        
+        set { cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) } }
     }
     
     mutating func choose(_ card: Card) {
@@ -71,5 +63,15 @@ struct ConcentrationGame<CardContent> where CardContent: Equatable {
         var isMatched = false
         let content: CardContent
         let id: Int
+    }
+}
+
+extension Array {
+    var oneAndOnly: Element? {
+        if count == 1 {
+            return first
+        } else {
+            return nil
+        }
     }
 }
