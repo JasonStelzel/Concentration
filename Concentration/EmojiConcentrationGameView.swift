@@ -13,17 +13,13 @@ struct EmojiConcentrationGameView: View {
     @ObservedObject var game: EmojiConcentrationGame // the instance of this particular game
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 30))] ){
-                ForEach(game.cards) { card in
-                    CardView(card: card)
-                        .aspectRatio(2/3, contentMode: .fit)
-                        .onTapGesture {
-                            game.choose(card)
-                        }
+        AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in
+            CardView(card: card)
+                .padding(4)
+                .onTapGesture {
+                    game.choose(card)
                 }
-            }
-        }
+        })
         .foregroundColor(.red)
         .padding(.horizontal)
     }

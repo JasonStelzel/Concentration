@@ -13,6 +13,7 @@
 		EB8B268B2890A75100D02983 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8B268A2890A75100D02983 /* Preview Assets.xcassets */; };
 		EBE7DF3A289206FB00FC849C /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7DF39289206FB00FC849C /* ConcentrationGame.swift */; };
 		EBE7DF3C2892093100FC849C /* EmojiConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7DF3B2892093100FC849C /* EmojiConcentrationGame.swift */; };
+		EBE7DF3E289795F700FC849C /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7DF3D289795F700FC849C /* AspectVGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		EB8B268A2890A75100D02983 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBE7DF39289206FB00FC849C /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
 		EBE7DF3B2892093100FC849C /* EmojiConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiConcentrationGame.swift; sourceTree = "<group>"; };
+		EBE7DF3D289795F700FC849C /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				EBE7DF3B2892093100FC849C /* EmojiConcentrationGame.swift */,
 				EB8B26832890A74A00D02983 /* ConcentrationApp.swift */,
 				EB8B26852890A74A00D02983 /* EmojiConcentrationGameView.swift */,
+				EBE7DF3D289795F700FC849C /* AspectVGrid.swift */,
 				EB8B26872890A75100D02983 /* Assets.xcassets */,
 				EB8B26892890A75100D02983 /* Preview Content */,
 			);
@@ -146,6 +149,7 @@
 				EBE7DF3C2892093100FC849C /* EmojiConcentrationGame.swift in Sources */,
 				EBE7DF3A289206FB00FC849C /* ConcentrationGame.swift in Sources */,
 				EB8B26862890A74A00D02983 /* EmojiConcentrationGameView.swift in Sources */,
+				EBE7DF3E289795F700FC849C /* AspectVGrid.swift in Sources */,
 				EB8B26842890A74A00D02983 /* ConcentrationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
