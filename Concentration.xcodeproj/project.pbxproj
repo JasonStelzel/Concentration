@@ -15,6 +15,7 @@
 		EBE7DF3C2892093100FC849C /* EmojiConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7DF3B2892093100FC849C /* EmojiConcentrationGame.swift */; };
 		EBE7DF3E289795F700FC849C /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7DF3D289795F700FC849C /* AspectVGrid.swift */; };
 		EBE7DF402897C32C00FC849C /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7DF3F2897C32C00FC849C /* Pie.swift */; };
+		EBE7DF422898CD6800FC849C /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7DF412898CD6800FC849C /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		EBE7DF3B2892093100FC849C /* EmojiConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiConcentrationGame.swift; sourceTree = "<group>"; };
 		EBE7DF3D289795F700FC849C /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		EBE7DF3F2897C32C00FC849C /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		EBE7DF412898CD6800FC849C /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				EBE7DF3B2892093100FC849C /* EmojiConcentrationGame.swift */,
 				EB8B26832890A74A00D02983 /* ConcentrationApp.swift */,
 				EB8B26852890A74A00D02983 /* EmojiConcentrationGameView.swift */,
+				EBE7DF412898CD6800FC849C /* Cardify.swift */,
 				EBE7DF3F2897C32C00FC849C /* Pie.swift */,
 				EBE7DF3D289795F700FC849C /* AspectVGrid.swift */,
 				EB8B26872890A75100D02983 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBE7DF402897C32C00FC849C /* Pie.swift in Sources */,
+				EBE7DF422898CD6800FC849C /* Cardify.swift in Sources */,
 				EBE7DF3C2892093100FC849C /* EmojiConcentrationGame.swift in Sources */,
 				EBE7DF3A289206FB00FC849C /* ConcentrationGame.swift in Sources */,
 				EB8B26862890A74A00D02983 /* EmojiConcentrationGameView.swift in Sources */,
