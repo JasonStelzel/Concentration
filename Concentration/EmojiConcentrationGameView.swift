@@ -27,8 +27,9 @@ struct EmojiConcentrationGameView: View {
             } else {
                 CardView(card: card)
                     .padding(4)
+                    .transition(AnyTransition.scale.animation(.easeInOut(duration: 1)))
                     .onTapGesture {
-                        withAnimation(.easeInOut(duration: 3)){
+                        withAnimation(.easeInOut(duration: 0.75)) {
                             game.choose(card)
                         }
                     }
