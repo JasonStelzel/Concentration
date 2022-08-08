@@ -13,15 +13,32 @@ struct EmojiConcentrationGameView: View {
     @ObservedObject var game: EmojiConcentrationGame // the instance of this particular game
     
     var body: some View {
-        AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in
-            CardView(card: card)
-                .padding(4)
-                .onTapGesture {
-                    game.choose(card)
-                }
-        })
+        VStack {
+            gameBody
+            shuffle
+        }
+        .padding()
+    }
+    
+    var gameBody: some View {
+        AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
+            if card.isMatched && !card.isFaceUp {
+                Color.clear
+            } else {
+                CardView(card: card)
+                    .padding(4)
+                    .onTapGesture {
+                        game.choose(card)
+                    }
+            }
+        }
         .foregroundColor(.red)
-        .padding(.horizontal)
+    }
+    
+    var shuffle: some View {
+        Button("Shuffle") {
+            game.shuffle()
+        }
     }
 }
             
