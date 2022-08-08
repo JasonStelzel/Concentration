@@ -20,9 +20,19 @@ struct EmojiConcentrationGameView: View {
         .padding()
     }
     
+    @State private var dealt = Set<Int>()
+    
+    private func deal(_ card: EmojiConcentrationGame.Card) {
+        dealt.insert(card.id)
+    }
+    
+    private func isUndealt(_ card: EmojiConcentrationGame.Card) -> Bool {
+        !dealt.contains(card.id)
+    }
+    
     var gameBody: some View {
         AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
-            if card.isMatched && !card.isFaceUp {
+            if isUndealt(card) || card.isMatched && !card.isFaceUp {
                 Color.clear
             } else {
                 CardView(card: card)
@@ -33,6 +43,15 @@ struct EmojiConcentrationGameView: View {
                             game.choose(card)
                         }
                     }
+            }
+            
+        }
+        .onAppear() {
+            // deal cards so that we can delay having them on screen for animation purposes
+            withAnimation {
+                for card in game.cards {
+                    deal(card)
+                }
             }
         }
         .foregroundColor(.red)
