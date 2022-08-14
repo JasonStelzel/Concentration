@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB62303A28A8F7EC00D2165D /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB62303928A8F7EC00D2165D /* ArrayExtensions.swift */; };
 		EB8B26842890A74A00D02983 /* ConcentrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B26832890A74A00D02983 /* ConcentrationApp.swift */; };
 		EB8B26862890A74A00D02983 /* EmojiConcentrationGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B26852890A74A00D02983 /* EmojiConcentrationGameView.swift */; };
 		EB8B26882890A75100D02983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8B26872890A75100D02983 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB62303928A8F7EC00D2165D /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		EB8B26802890A74A00D02983 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8B26832890A74A00D02983 /* ConcentrationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationApp.swift; sourceTree = "<group>"; };
 		EB8B26852890A74A00D02983 /* EmojiConcentrationGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiConcentrationGameView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				EBE7DF412898CD6800FC849C /* Cardify.swift */,
 				EBE7DF3F2897C32C00FC849C /* Pie.swift */,
 				EBE7DF3D289795F700FC849C /* AspectVGrid.swift */,
+				EB62303928A8F7EC00D2165D /* ArrayExtensions.swift */,
 				EB8B26872890A75100D02983 /* Assets.xcassets */,
 				EB8B26892890A75100D02983 /* Preview Content */,
 			);
@@ -159,6 +162,7 @@
 				EB8B26862890A74A00D02983 /* EmojiConcentrationGameView.swift in Sources */,
 				EBE7DF3E289795F700FC849C /* AspectVGrid.swift in Sources */,
 				EB8B26842890A74A00D02983 /* ConcentrationApp.swift in Sources */,
+				EB62303A28A8F7EC00D2165D /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

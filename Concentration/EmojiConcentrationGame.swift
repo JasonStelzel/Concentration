@@ -14,7 +14,7 @@ class EmojiConcentrationGame: ObservableObject {
     private static let emojis = ["🚁", "🚀", "✈️", "⛴", "🛩", "🚗", "🚌", "🚐", "🚛", "🚑", "🚕", "🚚", "🚢", "🚒", "🚓", "🚎", "🚖", "🛵", "🛴", "🛺", "🛻", "🚜"]
 
     private static func createConcentrationGame() -> ConcentrationGame<String> {
-        ConcentrationGame<String>(numberOfPairsOfCards: 6) { pairIndex in
+        ConcentrationGame<String>(numberOfPairsOfCards: 8) { pairIndex in
             emojis[pairIndex]
         }
     }

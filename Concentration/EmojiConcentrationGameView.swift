@@ -15,7 +15,7 @@ struct EmojiConcentrationGameView: View {
     @Namespace private var dealingNamespace
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom){
             VStack {
                 gameBody
                 HStack {
@@ -123,11 +123,27 @@ struct EmojiConcentrationGameView: View {
             
 struct CardView: View {
     let card: EmojiConcentrationGame.Card
+    
+    @State private var animatedBonusRemaining: Double = 0
         
     var body: some View {
         GeometryReader{ geometry in
             ZStack {
-                Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 115-90)).padding(5).opacity(0.5)
+                Group {
+                    if card.isConsumingBonusTime {
+                        Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: (1-animatedBonusRemaining) * 360-90))
+                            .onAppear {
+                                animatedBonusRemaining = card.bonusRemaining
+                                withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+                                    animatedBonusRemaining = 0
+                                }
+                            }
+                    } else {
+                        Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: (1-card.bonusRemaining) * 360-90))
+                    }
+                }
+                    .padding(5)
+                    .opacity(0.5)
                 Text(card.content)
                 // implicit animations can be overridden with .transactions
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
