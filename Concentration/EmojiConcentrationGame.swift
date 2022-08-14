@@ -34,4 +34,9 @@ class EmojiConcentrationGame: ObservableObject {
     func shuffle() {
         model.shuffle()
     }
+    
+    func restart() {
+        model = EmojiConcentrationGame.createConcentrationGame()
+    }
+    
 }

@@ -18,7 +18,12 @@ struct EmojiConcentrationGameView: View {
         VStack {
             gameBody
             deckBody
-            shuffle
+            HStack {
+                restart
+                Spacer()
+                shuffle
+            }
+            .padding(.horizontal)
         }
         .padding()
     }
@@ -72,7 +77,7 @@ struct EmojiConcentrationGameView: View {
                 CardView(card: card)
                     .matchedGeometryEffect(id: card.id, in: dealingNamespace)
                     .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .identity))
-                    .zIndex(zIndex(of: card)) // using a function to set the zIndex of each card to the additive inverse of its index in the shuffled set of game.cards (the number you would add to its array index to make zero) so that the visual stacking order matches the array order of the shuffled deck with the smallest ID on top.  Because zero would then be "the smallest" zIndex when you invert the original game.cards array indices into negative zIndex numbers, array index 1 (shuffled card #1) becomes zIndex -1 which places it below index 0 (card #0) so card 0 will remain on top (as higher numbered zIndex views are placed on top of lower numbered zIndex views).  Previously, with the cards generated in array index order and then shuffled, the array order would not match the zIndex view stacking order.  By using the array index as a key and inverting it into the zIndex for each card in order as it appears by its index in the shuffled array of cards, you can deal the cards in array index order and they will appear to be dealt from "the top" of the deck as the ordering of the views will now have views with z-indices of 0, -1, -2, -3, -4 etc assigned to each card id as needed based on how they were shuffled and where they were found, one by one as each card is sent to the zIndex function (the array index isn't known when they are sent to the zIndex function, just the card itself is known so we have to look up where it is in the shuffled deck by its id).
+                    .zIndex(zIndex(of: card))
             }
         }
         .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
@@ -91,6 +96,15 @@ struct EmojiConcentrationGameView: View {
         Button("Shuffle") {
             withAnimation {
                 game.shuffle()
+            }
+        }
+    }
+    
+    var restart: some View {
+        Button ("Restart") {
+            withAnimation {
+                dealt = []
+                game.restart()
             }
         }
     }
