@@ -147,7 +147,7 @@ struct CardView: View {
                 Text(card.content)
                 // implicit animations can be overridden with .transactions
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
-                    .animation(.linear(duration: 1).repeatCount(9, autoreverses: false))
+                    .animation(.linear(duration: 1).repeatCount(9, autoreverses: false), value: card.isMatched)
                     .font(Font.system(size:DrawingConstants.fontSize))
                     .scaleEffect(scale(thatFits: geometry.size))
             }
